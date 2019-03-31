@@ -1,0 +1,53 @@
+# This defines a commented line. 
+# In this grammar:
+#    - terminals are lowercase          (president)
+#    - nonterminals are all capitalized  (NP)
+
+# Creating a sentence:
+
+ROOT	S .
+ROOT	S !
+ROOT	is it true that S ?     # mixing terminals and nonterminals is ok.
+
+#    S  = sentence
+#    NP = noun phrase
+#    VP = verb phrase
+#    PP = prepositional phrase
+#    Det = determiner
+#    Prep = preposition
+#    Adj = adjective
+
+S	NP VP
+VP	Verb NP
+NP	Det Noun
+NP	NP PP
+PP	Prep NP
+Noun	Adj Noun
+
+# Vocabulary. There is no rule for rewriting the terminals. 
+
+Verb	ate
+Verb	wanted
+Verb	kissed
+Verb	washed
+Verb	pickled
+
+Det	the
+Det	a
+Det	every
+
+Noun	president
+Noun	sandwich
+Noun	pickle
+Noun	mouse
+Noun	floor
+
+Adj	fine
+Adj	delicious
+Adj	beautiful
+Adj	old
+
+Prep	with
+Prep	on
+Prep	under
+Prep	in

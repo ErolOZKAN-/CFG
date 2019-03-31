@@ -1,73 +1,59 @@
-# Generating sentences with a Context-Free Grammar
-# Ian S. Woodley
-
-from collections import OrderedDict
 import random
+from collections import OrderedDict
 
-class CFG(OrderedDict):
-    def __init__(self, *args):
-        super().__init__(map(lambda s: s.replace(' ', '').split('->'), args))
 
-    def __repr__(self):
-        return '\n'.join('{} -> {}'.format(k, v) for k, v in self.items())
+def get_rules(filename):
+    rules = OrderedDict()
+    with open(filename, "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            if line != "\n" and line[0] != "#":
+                content = line.split("#")[0]
+                content = content.replace("\n", "").split("\t")
+                if rules.get(content[0]) == None:
+                    rules[content[0]] = content[1]
+                else:
+                    rules[content[0]] = rules[content[0]] + "|" + content[1]
+    return rules
 
-    def getProductions(self, symbol):
-        return self[symbol].split('|')
 
-# Depth-first walk through tree, selecting random productions
-def generateSentence(cfg, start='S'):
-    string = []
+def print_rules():
+    for rule in rules:
+        print(rule, ":", rules[rule])
+
+
+def print_to_file(filename):
+    global sentence
+    with open(filename, "w") as file:
+        for sentence in generated_sentences:
+            file.write(sentence + "\n")
+    print("Printed to", filename)
+
+
+def create_sentence(rules, start):
+    crated_string = []
+
     def dfs(root):
-        local_str = ''
-        prod = random.choice(cfg.getProductions(root))
-        for char in prod:
-            if char in cfg:
-                result = dfs(char)
-                if result:
-                    string.append(result)
+        prod = random.choice(rules[root].split('|')).split()
+        for unit in prod:
+
+            if unit in rules:
+                dfs(unit)
             else:
-                local_str += char
-        return local_str
+                crated_string.append(unit)
 
     dfs(start)
-    return ' '.join(string[:-1]).capitalize() + string[-1]
+    return " ".join(crated_string)
 
-if __name__ == "__main__":
-    # Example CFG found online
-    L = [
-        'S -> NP VP ENDP',
-        'NP -> DET ADJ_L NOUN',
-        'VP -> VERB | VERB ADV | VP CONJ VP',
-        'ADJ_L -> ADJ | ADJ_L ADJ',
-        'NOUN -> "butterflies" | "flowers" | "days" | "moons" | "waves" | "kisses" | "sighs" | "ideas" | "winds"',
-        'ADJ -> "painful" | "yellow" | "lonely" | "beautiful" | "colorless"',
-        'DET -> "the" | "some" | "many" | "these" | "those"',
-        'VERB -> "die" | "wither" | "sleep" | "wilt" | "disappear"',
-        'ADV -> "woefully" | "pointlessly" | "slowly" | "selflessly" | "graciously"',
-        'CONJ -> "and" | "but" | "or"',
-        'ENDP -> "." | "!" | ". . ."'
-    ]
 
-    # Replacing variable names for simpler parsing
-    table = OrderedDict([
-        ('NP',       'A'),
-        ('VP',       'B'),
-        ('ADJ_L',    'C'),
-        ('NOUN',     'D'),
-        ('ADJ',      'E'),
-        ('DET',      'F'),
-        ('VERB',     'G'),
-        ('ADV',      'H'),
-        ('CONJ',     'I'),
-        ('ENDP',     'J')
-    ])
-
-    for i in range(len(L)):
-        L[i] = L[i].replace('\"', '')
-        for key in table:
-            L[i] = L[i].replace(key, table[key])
-
-    cfg = CFG(*L)
-    for _ in range(100):
-        print(generateSentence(cfg))
-
+print("--------------------- RULES --------------------------")
+rules = get_rules("../data/cfg.gr")
+print_rules()
+print("------------------------------------------------------\n")
+print("--------------------- SENTENCE GENERATION --------------------------")
+generated_sentences = []
+for i in range(0, 20):
+    sentence = create_sentence(rules, "ROOT")
+    generated_sentences.append(sentence)
+print_to_file("../output/random-sentence.txt")
+print("------------------------------------------------------")

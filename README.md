@@ -1,6 +1,6 @@
 # CMP 670 Statistical Natural Language Processing - Homework -2-
 
-data/cfg.gr: CFG rule set.
+**data/cfg.gr:** CFG rule set.
 
 **data/sentence.txt:** input sentence to test.
 

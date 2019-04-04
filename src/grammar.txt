@@ -1,0 +1,35 @@
+S -> S EROL
+EROL -> .
+S -> NP VP
+VP -> Verb NP
+NP -> Det Noun
+NP -> NP PP
+PP -> Prep NP
+Noun -> Adj Noun
+
+
+Verb -> ate
+Verb -> wanted
+Verb -> kissed
+Verb -> washed
+Verb -> pickled
+
+Det -> the
+Det -> a
+Det -> every
+
+Noun -> president
+Noun -> sandwich
+Noun -> pickle
+Noun -> mouse
+Noun -> floor
+
+Adj -> fine
+Adj -> delicious
+Adj -> beautiful
+Adj -> old
+
+Prep -> with
+Prep -> on
+Prep -> under
+Prep -> in

@@ -2,7 +2,7 @@
 
 **data/cfg.gr:** CFG rule set.
 
-**data/sentence.txt:** input sentence to test.
+**data/sentence.txt:** input sentence to parse.
 
 **src/randsentence.py:** a random sentence generator, generates new sentences randomly using given grammar rules.
 

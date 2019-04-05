@@ -51,9 +51,15 @@ rules = get_rules("../data/cfg.gr")
 print_rules()
 print("------------------------------------------------------\n")
 print("--------------------- SENTENCE GENERATION --------------------------")
+
 generated_sentences = []
-for i in range(0, 20):
+for i in range(0, 1000):
     sentence = create_sentence(rules, "ROOT")
+    if len(sentence.split()) > 30:
+        continue
+    if len(generated_sentences) > 20:
+        break
     generated_sentences.append(sentence)
+
 print_to_file("../output/random-sentence.txt")
 print("------------------------------------------------------")

@@ -4,7 +4,7 @@ import re
 
 GRAMMAR_RULES = "../data/cfg_changed.gr"
 SENTENCES = "../data/sentence.txt"
-OUTPUT_PATH = "../output/parse_results"
+OUTPUT_PATH = "../output/parse_results.txt"
 
 
 def read_lines(filename):

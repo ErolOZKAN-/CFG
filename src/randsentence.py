@@ -1,6 +1,10 @@
 import random
 from collections import OrderedDict
 
+MAX_DEPTH = 30
+NUMBER_OF_SENTENCES = 20
+INFINITE_LOOP_COUNT = 1000
+
 
 def get_rules(filename):
     '''Creates rules from file.'''
@@ -56,14 +60,17 @@ print_rules(rules)
 print("------------------------------------------------------\n")
 print("--------------------- SENTENCE GENERATION --------------------------")
 
-generated_sentences = []
-for i in range(0, 1000):
-    sentence = create_sentence(rules, "ROOT")
-    if len(sentence.split()) > 30:
-        continue
-    if len(generated_sentences) > 20:
-        break
-    generated_sentences.append(sentence)
+try:
+    generated_sentences = []
+    for i in range(0, INFINITE_LOOP_COUNT):
+        sentence = create_sentence(rules, "ROOT")
+        if len(sentence.split()) > MAX_DEPTH:
+            continue
+        if len(generated_sentences) > NUMBER_OF_SENTENCES:
+            break
+        generated_sentences.append(sentence)
 
-print_to_file(generated_sentences, "../output/random-sentence.txt")
-print("------------------------------------------------------")
+    print_to_file(generated_sentences, "../output/random-sentence.txt")
+    print("------------------------------------------------------")
+except RecursionError:
+    print("Please RUN again! RecursionError: maximum recursion depth exceeded.")

@@ -1,21 +1,31 @@
-TRUE	the sandwich in the sandwich ate the sandwich !
-FALSE	is it true that a beautiful mouse ate a sandwich on the beautiful mouse ?
-FALSE	is it true that every president pickled the pickle ?
-TRUE	every mouse washed a old sandwich !
-TRUE	every old floor kissed a old sandwich !
-TRUE	a floor wanted every mouse under the pickle with the president .
-FALSE	is it true that the beautiful pickle washed every mouse in the floor ?
-FALSE	is it true that every delicious sandwich on a pickle wanted every pickle ?
-TRUE	every president on every pickle on the floor kissed every president !
-TRUE	a pickle ate a president !
-TRUE	a sandwich under the mouse kissed a sandwich !
-TRUE	a floor on the sandwich in a mouse under the floor ate the mouse under a pickle under the delicious sandwich .
-TRUE	every mouse under the beautiful president with the pickle on the sandwich in the floor under the mouse under every pickle with the president pickled every sandwich !
-TRUE	the pickle pickled a mouse .
-TRUE	every mouse ate every mouse on a president on a pickle with a sandwich with every president under the fine beautiful old floor .
-TRUE	the president in a sandwich with the floor under a sandwich wanted the pickle .
-TRUE	every pickle in a president ate a beautiful president .
-TRUE	the president washed every pickle .
-TRUE	a old pickle in a president in the floor with a president washed every delicious floor !
-TRUE	a sandwich with every mouse with every mouse ate every mouse .
-FALSE	is it true that the sandwich on the sandwich with every sandwich in every president kissed a floor ?
+CORRECT	is it true that a beautiful floor with the mouse with a mouse in the pickle on a sandwich in every delicious mouse kissed a beautiful sandwich ?
+CORRECT	is it true that a floor ate every president ?
+CORRECT	a mouse kissed every beautiful president in the floor !
+CORRECT	is it true that a pickle pickled a fine mouse ?
+CORRECT	every sandwich pickled the mouse !
+CORRECT	a floor ate every mouse !
+CORRECT	is it true that every sandwich ate every floor ?
+CORRECT	the floor on the floor on a sandwich under a sandwich in a sandwich washed a pickle .
+CORRECT	is it true that a delicious mouse in the president in every pickle under every pickle washed the pickle on the president with a pickle in a floor ?
+CORRECT	the president with every sandwich in every pickle on every pickle with every sandwich in a president in every sandwich wanted the mouse on every pickle with every sandwich .
+CORRECT	is it true that the pickle kissed a sandwich with the president ?
+CORRECT	every pickle wanted a sandwich .
+CORRECT	is it true that every pickle washed the mouse in a mouse with a fine president under a president ?
+CORRECT	every pickle pickled the president .
+CORRECT	a floor ate the beautiful sandwich !
+CORRECT	every mouse with a mouse on the mouse wanted a pickle .
+CORRECT	is it true that every sandwich ate every delicious floor in a floor ?
+CORRECT	a pickle with every fine sandwich under a pickle with a mouse pickled the president !
+CORRECT	is it true that the president under every president pickled a floor ?
+CORRECT	the floor ate the mouse with a pickle on the president under a beautiful beautiful mouse on the president on a sandwich under the mouse !
+CORRECT	every pickle washed a pickle !
+CORRECT	is it true that a beautiful floor washed a floor with a floor ?
+NOT CORRECT	a sandwich floor pickled the pickle !
+NOT CORRECT	the floor floor ate a floor .
+NOT CORRECT	is it sandwich that a sandwich ate a sandwich sandwich ?
+NOT CORRECT	the president pickled every.
+NOT CORRECT	is sandwich sandwich that a beautiful floor washed a floor with a floor ?
+NOT CORRECT	every pickle every every president !
+NOT CORRECT	president pickle wanted every president !
+NOT CORRECT	fine fine pickle kissed every president in every president !
+NOT CORRECT	sandwich delicious floor kissed a sandwich .

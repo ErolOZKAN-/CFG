@@ -3,6 +3,7 @@ from collections import OrderedDict
 
 
 def get_rules(filename):
+    '''Creates rules from file.'''
     rules = OrderedDict()
     with open(filename, "r") as file:
         lines = file.readlines()
@@ -17,13 +18,14 @@ def get_rules(filename):
     return rules
 
 
-def print_rules():
+def print_rules(rules):
+    '''Prints rules.'''
     for rule in rules:
         print(rule, ":", rules[rule])
 
 
-def print_to_file(filename):
-    global sentence
+def print_to_file(generated_sentences, filename):
+    '''Prints generated sentences to given filename.'''
     with open(filename, "w") as file:
         for sentence in generated_sentences:
             file.write(sentence + "\n")
@@ -31,9 +33,11 @@ def print_to_file(filename):
 
 
 def create_sentence(rules, start):
+    '''Creates a new sentence from given rules and start symbol.'''
     crated_string = []
 
     def dfs(root):
+        '''Depth first ramdom creation.'''
         prod = random.choice(rules[root].split('|')).split()
         for unit in prod:
 
@@ -48,7 +52,7 @@ def create_sentence(rules, start):
 
 print("--------------------- RULES --------------------------")
 rules = get_rules("../data/cfg.gr")
-print_rules()
+print_rules(rules)
 print("------------------------------------------------------\n")
 print("--------------------- SENTENCE GENERATION --------------------------")
 
@@ -61,5 +65,5 @@ for i in range(0, 1000):
         break
     generated_sentences.append(sentence)
 
-print_to_file("../output/random-sentence.txt")
+print_to_file(generated_sentences, "../output/random-sentence.txt")
 print("------------------------------------------------------")

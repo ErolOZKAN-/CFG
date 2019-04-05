@@ -9,7 +9,17 @@ ROOT	S QQ
 QQ  .
 QQ  !
 QQ  ?
-#ROOT	is it true that S ?     # mixing terminals and nonterminals is ok.
+
+S	AA S
+
+AA BB CC
+BB  A B
+CC  C D
+
+A   is
+B   it
+C   true
+D   that
 
 #    S  = sentence
 #    NP = noun phrase
